@@ -16,3 +16,6 @@ libraryDependencies ++= Seq(
 
 resolvers += Classpaths.typesafeReleases
 
+mainClass in(Compile, run) := Some("main.spark_main")
+mainClass in(Compile, packageBin) := Some("main.spark_main")
+
