@@ -5,10 +5,12 @@ import org.apache.spark.sql.SparkSession
 object IngestParquetFromCsv {
     val spark = SparkSession.builder().getOrCreate()
 
-    def ingest(path: String): Unit = {
-        val df = spark.read.parquet(path)
+    def ingest(path: String, outputPath: String): Unit = {
+        val df = spark.read.csv(path)
         df.show
-        print(df.count)
+        println(df.count)
+        spark.write.parquet(outputPath)
+        
     }
 
     def main(args: Array[String]): Unit = {
