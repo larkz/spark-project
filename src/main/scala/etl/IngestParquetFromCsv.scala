@@ -9,7 +9,7 @@ object IngestParquetFromCsv {
         val df = spark.read.csv(path)
         df.show
         println(df.count)
-        spark.write.parquet(outputPath)
+        df.write.parquet(outputPath)
         
     }
 
