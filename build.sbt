@@ -1,4 +1,4 @@
-name := "spark-project"
+name := "bidtime"
 
 version := "0.5"
 
@@ -15,4 +15,5 @@ libraryDependencies ++= Seq(
 )
 
 resolvers += Classpaths.typesafeReleases
+mainClass := Some("etl.SparkMain")
 
