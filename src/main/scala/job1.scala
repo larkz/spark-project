@@ -8,7 +8,7 @@ object job1sub {
 
     println("larkin")
     def method1(): Unit = {
-        val df = spark.read.csv("data/FireDepartmentSample.csv")
-        df.write.parquet("data/Fire.parquet")
+        val df = spark.read.csv("gs://shashank-data/FireDepartmentSample.csv")
+        df.write.parquet("gs://shashank-data/data/Fire.parquet")
     }
 }
