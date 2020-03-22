@@ -20,6 +20,7 @@ object DataProcessing {
             "inferSchema", "true").load(
             csvPath
         )
+        print(csvDf)
         csvDf
     }
 
@@ -30,5 +31,20 @@ object DataProcessing {
         println("writing dataframe to csv!")
         df.write.format("com.databricks.spark.csv").option("header", "true").save("mydata.csv")
     }
+
+    /*
+    def someML(filePath: String): Unit = {
+        val df = readCSV
+
+        ...
+        DF1 + T1 -> DF2 + T2 -> ... -> DFinal
+        ...
+        val mlPipeline = Pipeline(T1, T2, ...)
+        val DFinal = runPipeline(DF1, mlPipeline)
+        
+        writeToCSV(DFinal)
+    }
+    */
+
 
 }

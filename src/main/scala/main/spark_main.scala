@@ -15,6 +15,7 @@ object spark_main extends Serializable{
     val dummy = args(0)
     dummy match {
       case "GrabData" => DataProcessing.getParquet(args(1))
+      case "PrintCSV" => DataProcessing.readCSV(args(1))
       case _ => throw new ClassNotFoundException(s"$dummy class does not exist !")
     }
   }
